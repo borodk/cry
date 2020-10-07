@@ -1,3 +1,4 @@
+require "./cry_coin/*"
 # TODO: Write documentation for `Cry`
 module Cry
   VERSION = "0.1.0"

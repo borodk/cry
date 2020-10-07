@@ -3,7 +3,9 @@ require "openssl"
 module CRYCoin
   module ProofOfWork
     
-    private def proof_of_work(difficulty = "0000")
+    # Increment until a valid hash is found
+    # A valid hash is one that begins with the value of the difficulty variable
+    private def proof_of_work(difficulty = "00")
       nonce = 0
       loop do
         hash = calc_hash_with_nonce(nonce)
@@ -17,7 +19,7 @@ module CRYCoin
 
     private def calc_hash_with_nonce(nonce = 0)
       sha = OpenSSL::Digest.new("SHA256")
-      sha.update("#{nonce}#{@index}#{@timestamp}#{@data}#{@previous_hash}")
+      sha.update("#{nonce}#{@index}#{@timestamp}#{@transactions}#{@previous_hash}")
       sha.hexdigest
     end
 
