@@ -59,4 +59,5 @@ get "/nodes/resolve" do
   end
 end
 
+Kemal.config.port = ENV["PORT"].to_i || 3000
 Kemal.run

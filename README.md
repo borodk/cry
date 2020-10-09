@@ -8,24 +8,27 @@ TODO: Write installation instructions here
 
 ## Usage
 
-### REGISTER 2ND NODE TO FIRST NODE:  
+#### Run
+PORT=3000 crystal run src/server.cr
+PORT=3001 crystal run src/server.cr
+
+#### Register second node to first node:  
 curl -X POST http://0.0.0.0:3000/nodes/register -H "Content-Type: application/json" -d '{"nodes": ["http://0.0.0.0:3001"]}'
 
-### ADD TRANSACTIONS:  
-curl -X POST http://0.0.0.0:3000/transactions/new -H "Content-Type: application/json" -d '{"from": "odin", "to":"tom", "amount": 11.11}'  
+#### Add transaction:   
 curl -X POST http://0.0.0.0:3001/transactions/new -H "Content-Type: application/json" -d '{"from": "fnu", "to":"batman", "amount": 777}'  
 
-### MINE:  
+#### Mine transactions into a block on the second node:  
 curl http://0.0.0.0:3001/mine  
 
-### VIEW PENDING TRANSACTIONS:  
+#### View pending transactions:  
 curl http://0.0.0.0:3001/pending  
 
-### VIEW CHAIN:  
+#### View blockchain:  
 curl http://0.0.0.0:3000/chain  
 curl http://0.0.0.0:3001/chain  
 
-### UPDATE CHAIN:  
+#### Update blockchain (resolve first node):  
 curl http://0.0.0.0:3000/nodes/resolve  
 
 ## Development
