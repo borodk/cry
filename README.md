@@ -25,7 +25,7 @@ curl http://0.0.0.0:3001/pending
 curl http://0.0.0.0:3000/chain  
 curl http://0.0.0.0:3001/chain  
 
-UPDATE CHAIN:  
+### UPDATE CHAIN:  
 curl http://0.0.0.0:3000/nodes/resolve  
 
 ## Development
