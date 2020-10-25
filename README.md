@@ -1,4 +1,4 @@
-# cry
+# 😢 cry 😢
 
 crystal language cryptocurrency demo
 
@@ -8,9 +8,9 @@ TODO: Write installation instructions here
 
 ## Usage
 
-#### Run
-PORT=3000 crystal run src/server.cr
-PORT=3001 crystal run src/server.cr
+#### Run  
+PORT=3000 crystal run src/server.cr  
+PORT=3001 crystal run src/server.cr  
 
 #### Register second node to first node:  
 curl -X POST http://0.0.0.0:3000/nodes/register -H "Content-Type: application/json" -d '{"nodes": ["http://0.0.0.0:3001"]}'

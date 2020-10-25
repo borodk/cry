@@ -2,6 +2,7 @@ require "kemal"
 require "uuid"
 
 require "./cry"
+require "./cry_coin/consensus"
 
 # Generate a unique global address for this node
 node_id = UUID.random.to_s
